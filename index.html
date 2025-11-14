@@ -5,19 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Wedding Card</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{width:100vw;height:100vh;display:flex;justify-content:center;align-items:center;background:url('background.png') center center / cover no-repeat;font-family:Arial,sans-serif;}
-        .card-container{position:relative;display:flex;justify-content:center;align-items:center;max-width:90vw;max-height:90vh;}
-        .card-image{display:block;max-width:100%;max-height:90vh;width:auto;height:auto;object-fit:contain;box-shadow:0 10px 40px rgba(0,0,0,.2);border-radius:8px;}
-        .control-button{position:absolute;bottom:20px;width:50px;height:50px;background:rgba(0,0,0,.5);border:none;border-radius:50%;cursor:pointer;display:flex;justify-content:center;align-items:center;transition:background .3s ease;backdrop-filter: blur(2px);}
-        .control-button:hover{background:rgba(0,0,0,.7);}
-        .mute-button{right:20px;}
-        .location-button{right:86px;} /* placed left of mute button */
-        .start-overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;z-index:1000;cursor:pointer;}
-        .start-overlay.hidden{display:none;}
-        .start-button{background:white;color:#333;border:none;padding:20px 40px;font-size:24px;border-radius:50px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:transform .2s ease,box-shadow .2s ease;}
-        .start-button:hover{transform:scale(1.05);box-shadow:0 6px 30px rgba(0,0,0,.4);}
-        .control-button svg{width:24px;height:24px;fill:white;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    width:100vw;height:100vh;display:flex;justify-content:center;align-items:center;
+    background:url('background.png') center center / cover no-repeat;
+    font-family:Arial,sans-serif;
+}
+.card-container{
+    position:relative;display:flex;justify-content:center;align-items:center;
+    max-width:90vw;max-height:90vh;
+}
+.card-image{
+    display:block;max-width:100%;max-height:90vh;width:auto;height:auto;
+    object-fit:contain;box-shadow:0 10px 40px rgba(0,0,0,.2);border-radius:8px;
+}
+
+.control-button{
+    position:absolute;bottom:20px;
+    width:40px;height:40px; /* smaller buttons */
+    background:rgba(0,0,0,.5);
+    border:none;border-radius:50%;cursor:pointer;
+    display:flex;justify-content:center;align-items:center;
+    transition:background .3s ease;backdrop-filter:blur(2px);
+}
+.control-button:hover{background:rgba(0,0,0,.7);}
+
+.mute-button{right:15px;}         /* adjusted */
+.location-button{right:63px;}     /* adjusted */
+
+.start-overlay{
+    position:fixed;top:0;left:0;width:100vw;height:100vh;
+    background:rgba(0,0,0,.8);display:flex;justify-content:center;align-items:center;
+    z-index:1000;cursor:pointer;
+}
+.start-overlay.hidden{display:none;}
+
+.start-button{
+    background:white;color:#333;border:none;
+    padding:20px 40px;font-size:24px;border-radius:50px;
+    cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.3);
+    transition:transform .2s ease,box-shadow .2s ease;
+}
+.start-button:hover{
+    transform:scale(1.05);
+    box-shadow:0 6px 30px rgba(0,0,0,.4);
+}
+
+.control-button svg{width:20px;height:20px;fill:white;} /* smaller icon */
     </style>
 </head>
 <body>
